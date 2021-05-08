@@ -3,15 +3,15 @@ const app = express();
 const path = require("path");
 
 const port = 3000;
-const image = "programar.jpg";
-const index = "index.html";
+const dirImagen = path.join(__dirname, "programar.jpg");
+const dirIndex = path.join(__dirname, "index.html");
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, index));
+  res.sendFile(dirIndex);
 });
 
 app.get("/foto", (req, res) => {
-  res.sendFile(path.join(__dirname, image));
+  res.sendFile(dirImagen);
 });
 
 app.get("/saludo", (req, res) => {
